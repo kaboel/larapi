@@ -1,6 +1,6 @@
 # larapi
 
-<a href="https://github.styleci.io/repos/193153689"><img src="https://github.styleci.io/repos/193153689/shield?branch=master" alt="StyleCI"></a>
+[![StyleCI](https://github.styleci.io/repos/193153689/shield?branch=master)](https://github.styleci.io/repos/193153689)
 
 Laravel-built API
 
