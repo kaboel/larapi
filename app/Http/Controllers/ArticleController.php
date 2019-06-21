@@ -49,7 +49,6 @@ class ArticleController extends Controller
         if ($article->save()) {
             return new ArticleResource($article);
         }
-
     }
 
     /**
@@ -66,7 +65,6 @@ class ArticleController extends Controller
 
         // Return data as Json string
         return new ArticleResource($article);
-
     }
 
     /**
