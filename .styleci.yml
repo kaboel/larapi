@@ -2,6 +2,14 @@ preset: recommended
 risky: true
 finder:
   exclude:
+    - app/Console
+    - app/Exceptions
+    - app/Http/Middleware
+    - app/Providers
+    - tests
+    - resources
+    - bootstrap
+    - config
     - modules
     - node_modules
     - storage
