@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('article', 'ArticleController');
+Route::resource('articles', 'ArticleController');
