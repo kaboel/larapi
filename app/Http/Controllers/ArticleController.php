@@ -11,7 +11,7 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
@@ -35,23 +35,36 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return ArticleResource
      */
     public function store(Request $request)
     {
-        //
+        $article = $request->isMethod('put') ? Article::findOrFail($request->article_id) : new Article;
+
+        $article->title = $request->title;
+        $article->body  = $request->body;
+
+        if($article->save()) {
+            return new ArticleResource($article);
+        }
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return ArticleResource
      */
     public function show($id)
     {
-        //
+        // Get single article by id
+        $article = Article::findOrFail($id);
+
+        // Return data as Json string
+        return new ArticleResource($article);
+
     }
 
     /**
